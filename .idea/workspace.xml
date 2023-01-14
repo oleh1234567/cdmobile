@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="First day" />
+    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="gagagagaga" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +105,28 @@
       <option name="project" value="LOCAL" />
       <updated>1673678220378</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="First day">
+      <created>1673678325841</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673678325841</updated>
+    </task>
+    <task id="LOCAL-00008" summary="gagagagaga">
+      <created>1673678356054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673678356054</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gagagagaga">
+      <created>1673678469508</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673678469508</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First day" />
-    <option name="LAST_COMMIT_MESSAGE" value="First day" />
+    <MESSAGE value="gagagagaga" />
+    <option name="LAST_COMMIT_MESSAGE" value="gagagagaga" />
   </component>
 </project>
