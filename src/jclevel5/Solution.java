@@ -1,25 +1,36 @@
 package jclevel5;
 
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
-
-1. In the Solution class, create a Cat class with a public String field name.
-2. In the static block, create a Cat object and assign it to the variable cat (don't forget to initialize the field name).
-3. In the Cat class, don't create constructors with parameters.
-4. In the static block, display the created cat's name on the screen.
+1. Initialize the variable Statics.FILE_NAME to the full
+path to a data file that contains several lines.
+2. Then, in the static block, read all the lines from the
+file named Statics.FILE_NAME, and add them separately to the List lines.
 */
 
+
 public class Solution {
-    public static Cat cat;
+    public static List<String> lines = new ArrayList<>();
+
+    static{
+        try {
+            lines = Files.readAllLines(Paths.get(Statics.FILE_NAME));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static void main(String[] args) {
-
+        System.out.println(lines);
     }
 }
+
 
 
 
