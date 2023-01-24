@@ -1,64 +1,75 @@
 package jclevel6;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*
-
 1. Figure out what the program does.
-2. We need to be sure that Chump talks the most during the political debate.
-3. Think about what method you can call on the chump object to make Chump
-talk until all the available time has been taken.
+2. Implement the printTime method so that the time is given every second, beginning with the time specified in the constructor.
+
+Example:
+In London, the time is now 23:59:58!
+In London, the time is now 23:59:59!
+It's currently midnight in London!
+In London, the time is now 00:00:01!
 
 Requirements:
-•	Call the join method on the necessary object.
-•	The Politician class's toString method should display how many times the politician spoke, for example: "Chump spoke 35 times".
-•	The program should create 3 Politician objects.
-•	Don't change the methods that are responsible for screen output.
-•	The program's output should indicate that Chump spoke the most during the political debate.
-
+•	The printTime method should run for about a second.
+•	The printTime method should increase (increment) the number of seconds stored in the variable seconds.
+•	After incrementing the time, the second count cannot be greater than 59. The number of minutes should increase.
+•	After incrementing the time, the minute count cannot be greater than 59. The number of hours should increase.
+•	After incrementing the time, the hour count cannot be greater than 23.
 */
 
 public class Solution {
-    public static int totalSpeechCount = 200;
-    public static int utterancesPerSpeech = 1_000_000;
+    public static volatile boolean isStopped = false;
 
     public static void main(String[] args) throws InterruptedException {
-        Politician chump = new Politician("Chump");
-        chump.join();
-        Politician dustbin = new Politician("Dustbin");
-        Politician schooner = new Politician("Schooner");
-
-        while (chump.getSpeechCount() + dustbin.getSpeechCount() + schooner.getSpeechCount() < totalSpeechCount) {
-        }
-
-
-        System.out.println(chump);
-        System.out.println(dustbin);
-        System.out.println(schooner);
+        Clock clock = new Clock("London", 23, 59, 57);
+        Thread.sleep(4000);
+        isStopped = true;
+        Thread.sleep(1000);
     }
 
-    public static class Politician extends Thread {
-        private volatile int utteranceCount;
+    public static class Clock extends Thread {
+        private String cityName;
+        private int hours;
+        private int minutes;
+        private int seconds;
 
-        public Politician(String name) {
-            super(name);
+        public Clock(String cityName, int hours, int minutes, int seconds) {
+            this.cityName = cityName;
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
             start();
         }
 
         public void run() {
-            while (utteranceCount < totalSpeechCount * utterancesPerSpeech) {
-                utteranceCount++;
+            try {
+                while (!isStopped) {
+                    printTime();
+                }
+            } catch (InterruptedException e) {
             }
         }
 
-        public int getSpeechCount() {
-            return utteranceCount / utterancesPerSpeech;
-        }
+        private void printTime() throws InterruptedException {
+            Thread.sleep(1000);
+            if(seconds < 59)
+                seconds++;
+            else if(minutes < 59){
+                seconds = 0;
+                minutes++;
+            } else if(hours < 23){
+                seconds = minutes = 0;
+                hours++;
+            } else {
+                seconds = minutes = hours = 0;
+            }
 
-        @Override
-        public String toString() {
-            return String.format("%s spoke %d times", getName(), getSpeechCount());
+            if (hours == 0 && minutes == 0 && seconds == 0) {
+                System.out.println(String.format("It's currently midnight in %s!", cityName));
+            } else {
+                System.out.println(String.format("In %s, the time is now %02d:%02d:%02d!", cityName, hours, minutes, seconds));
+            }
         }
     }
 }
