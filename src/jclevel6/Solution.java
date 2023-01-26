@@ -2,73 +2,55 @@ package jclevel6;
 
 /*
 1. Figure out what the program does.
-2. Implement the printTime method so that the time is given every second, beginning with the time specified in the constructor.
+2. Make the program first display the result of the thread,
+and when the thread has finished then the main method continues.
 
-Example:
-In London, the time is now 23:59:58!
-In London, the time is now 23:59:59!
-It's currently midnight in London!
-In London, the time is now 00:00:01!
+3. Example output:
+inside MyThread 0
+inside MyThread 1
+...
+inside MyThread 9
+inside main 0
+inside main 1
+...
+inside main 9
 
 Requirements:
-•	The printTime method should run for about a second.
-•	The printTime method should increase (increment) the number of seconds stored in the variable seconds.
-•	After incrementing the time, the second count cannot be greater than 59. The number of minutes should increase.
-•	After incrementing the time, the minute count cannot be greater than 59. The number of hours should increase.
-•	After incrementing the time, the hour count cannot be greater than 23.
+•	The main method must call the start method on thread t.
+•	The main method must call the join method on thread t.
+•	At first, the program should display 10 lines starting with "inside MyThread".
+•	At the end, the program should display 10 lines starting with "inside main".
+•	In total, the program should display 20 lines.
 */
 
-public class Solution {
-    public static volatile boolean isStopped = false;
 
-    public static void main(String[] args) throws InterruptedException {
-        Clock clock = new Clock("London", 23, 59, 57);
-        Thread.sleep(4000);
-        isStopped = true;
-        Thread.sleep(1000);
+public class Solution {
+    public static MyThread t = new MyThread();
+    static String message = "inside main ";
+
+    public static void main(String a[]) throws Exception {
+        t.start();
+        t.join();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(message + i);
+            sleep();
+        }
     }
 
-    public static class Clock extends Thread {
-        private String cityName;
-        private int hours;
-        private int minutes;
-        private int seconds;
-
-        public Clock(String cityName, int hours, int minutes, int seconds) {
-            this.cityName = cityName;
-            this.hours = hours;
-            this.minutes = minutes;
-            this.seconds = seconds;
-            start();
+    public static void sleep() {
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
         }
+    }
+
+    static class MyThread extends Thread {
+        String message = "inside MyThread ";
 
         public void run() {
-            try {
-                while (!isStopped) {
-                    printTime();
-                }
-            } catch (InterruptedException e) {
-            }
-        }
-
-        private void printTime() throws InterruptedException {
-            Thread.sleep(1000);
-            if(seconds < 59)
-                seconds++;
-            else if(minutes < 59){
-                seconds = 0;
-                minutes++;
-            } else if(hours < 23){
-                seconds = minutes = 0;
-                hours++;
-            } else {
-                seconds = minutes = hours = 0;
-            }
-
-            if (hours == 0 && minutes == 0 && seconds == 0) {
-                System.out.println(String.format("It's currently midnight in %s!", cityName));
-            } else {
-                System.out.println(String.format("In %s, the time is now %02d:%02d:%02d!", cityName, hours, minutes, seconds));
+            for (int i = 0; i < 10; i++) {
+                System.out.println(message + i);
+                Solution.sleep();
             }
         }
     }
