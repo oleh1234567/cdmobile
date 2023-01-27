@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="i just can't">
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/ImageReaderFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/BmpReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/ImageReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/ImageTypes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/JpgReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/PngReader.java" afterDir="false" />
+    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="commit from bubuntu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jclevel6/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel6/Solution.java" afterDir="false" />
     </list>
@@ -149,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673763780496</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit from bubuntu">
+      <created>1674798811900</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674798811900</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
