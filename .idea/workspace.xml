@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="i just can't">
-      <change afterPath="$PROJECT_DIR$/file1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/main/CancelTraining.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/main/StackOverFlow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel6/main/VideoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/ImageReaderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/BmpReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/ImageReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/ImageTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/JpgReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel6/common/PngReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jclevel6/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel6/Solution.java" afterDir="false" />
     </list>
@@ -21,8 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

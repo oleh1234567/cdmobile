@@ -1,103 +1,90 @@
 package jclevel6;
 
+/*1. Create 5 different threads that differ from Thread:
+1.1. Thread 1 must run indefinitely;
+1.2. Thread 2 should display "InterruptedException" when an InterruptedException occurs;
+1.3. Thread 3 should display "Hurray" every half second;
+1.4. Thread 4 must implement the Message interface. When the showWarning method is called, the thread should stop;
+1.5. Thread 5 should read numbers from the console until "N" is entered. Then it should display the sum of the entered numbers.
+2. In a static block, add your threads to List<Thread> threads in the specified order.
+3. The threads should not start automatically.
 
-/*
-1. Figure out what the program does.
-2. In a static block, read 2 filenames: firstFileName and secondFileName.
-3. Inside the Solution class, create a public static ReadFileThread class that implements the ReadFileInterface interface (Think about what is more appropriate: Thread or Runnable).
-3.1. The setFileName method must set the name of the file whose contents will be read.
-3.2. The getFileContents method must return the contents of the file.
-3.3. In the run method, read the contents of the file and close the stream. Separate the lines of the file with spaces.
-4. Think about where you need to wait for the thread to finish to ensure that the files are displayed sequentially.
-4.1. To do this, add a call to the appropriate method.
-
-Expected output:
-[entire contents of the first file]
-[entire contents of the second file]
+Hint:
+Thread 4 can be checked using isAlive()
 
 Requirements:
-•	The Solution class's static block should read from the console the names of two files and store them in the variables firstFileName and secondFileName.
-•	In the Solution class, declare the public static ReadFileThread class.
-•	The ReadFileThread class must implement the ReadFileInterface interface.
-•	The ReadFileThread class must inherit the appropriate class.
-•	The ReadFileThread class's run method should read lines from the file set by
-the setFileName method.
-And the getFileContents method of this same class must return the file contents.
-The return value is one string consisting of the lines of the file, separated by spaces.
-•	The systemOutPrintln method must call the join method on the created object f.
-•	The program's output should consist of 2 lines. Each line contains the contents of one file.
-*/
+•	The Solution class's static block must create 5 threads and add them to the threads list.
+•	The threads in the threads list should not start automatically.
+•	Thread 1 in the threads list must run infinitely.
+•	Thread 2 in the threads list should display "InterruptedException" when an InterruptedException occurs.
+•	Thread 3 in the threads list should display "Hurray" every half second.
+•	Thread 4 in the threads list must implement the Message interface. When the showWarning method is called, the thread should stop.
+•	Thread 5 in the threads list should read numbers from the console until "N" is entered. Then it should display the sum of the entered numbers.*/
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Scanner;
-import java.util.stream.Stream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class Solution {
-    public static String firstFileName;
-    public static String secondFileName;
+    public static List<Thread> threads = new ArrayList<>(5);
 
     static {
-        Scanner scanner = new Scanner(System.in);
-        firstFileName = scanner.nextLine();
-        secondFileName = scanner.nextLine();
+        Thread thread1 = new Thread(() -> {
+            while (true) ;
+        });
+        Thread thread2 = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("InterruptedException");
+            }
+        });
+        Thread thread3 = new Thread(() -> {
+            try {
+                while (true) {
+                    System.out.println("Hurray");
+                    Thread.sleep(500);
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        Thread4 thread4 = new Thread4();
+
+        Thread thread5 = new Thread(() -> {
+            int sum = 0;
+            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+            String check = "";
+            while (!check.equals("N")) {
+                try {
+                    check = bf.readLine();
+                    sum += Integer.parseInt(check);
+                } catch (Exception e) {
+
+                }
+            }
+            System.out.println(sum);
+        });
+
+        Collections.addAll(threads, thread1, thread2, thread3, thread4, thread5);
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        systemOutPrintln(firstFileName);
-        systemOutPrintln(secondFileName);
+    public static void main(String[] args) {
+        threads.get(4).start();
     }
 
-    public static void systemOutPrintln(String fileName) throws InterruptedException {
-        ReadFileInterface f = new ReadFileThread();
-        f.setFileName(fileName);
-        f.start();
-        f.join();
-        System.out.println(f.getFileContents());
-    }
-
-    public interface ReadFileInterface {
-
-        void setFileName(String fullFileName);
-
-        String getFileContents();
-
-        void join() throws InterruptedException;
-
-        void start();
-    }
-
-    public static class ReadFileThread extends Thread implements ReadFileInterface {
-
-        private String fullFileName;
-        private StringBuilder result = new StringBuilder();
-
+    static class Thread4 extends Thread implements Message {
+        //1.4. Thread 4 must implement the Message interface. When the showWarning method is called, the thread should stop;
         @Override
-        public void setFileName(String fullFileName) {
-            //3.1. The setFileName method must set the name
-            // of the file whose contents will be read.
-
-            this.fullFileName = fullFileName;
-        }
-
-        @Override
-        public String getFileContents() {
-            //3.2. The getFileContents method must return the contents of the file.
-            return result.toString();
+        public void showWarning() {
+            Thread.currentThread().interrupt();
         }
 
         @Override
         public void run() {
-            try(Stream<String> stream = Files.lines(Paths.get(fullFileName))) {
-                stream.forEach(line -> {
-                    result.append(line);
-                    result.append(" ");
-                });
-                result.deleteCharAt(result.length()-1);
+            while (Thread.currentThread().isAlive()) {
 
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
         }
     }
