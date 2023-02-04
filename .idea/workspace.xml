@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="commit from bubuntu">
-      <change afterPath="$PROJECT_DIR$/src/jclevel7/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel7/Sex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel7/ThreadExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Beach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Cook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/CorruptedDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Dish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Drug.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/DrugController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/NotEnoughMoneyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel7/Waiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jclevel7/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel7/Solution.java" afterDir="false" />
     </list>
@@ -19,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -48,16 +59,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/kuznetsov.aa.HITED1UA/IdeaProjects/cdmobile",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/oleh/IdeaProjects/cdmobile&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kuznetsov.aa.HITED1UA\IdeaProjects\cdmobile" />
@@ -65,27 +76,6 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="jclevel5" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jclevel7.Solution" />
-      <module name="cdmobile" />
-      <option name="PROGRAM_PARAMETERS" value="-i 0 1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="jclevel7.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Solution" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
