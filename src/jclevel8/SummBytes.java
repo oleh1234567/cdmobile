@@ -13,11 +13,14 @@ public class SummBytes {
                 new FileOutputStream("src\\jclevel8\\copy.txt");
         long sum = 0;
 
+
+        char c = (char) 0;
+        outputStream.write(c);
+
         while (inputStream.available() > 0) //as long as there are unread bytes
         {
             int data = inputStream.read(); //Read the next byte
             System.out.println(data);
-            outputStream.write(data);
         }
         inputStream.close(); // Close the stream
         outputStream.close();

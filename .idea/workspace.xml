@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="haha">
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/SummBytes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel8/ReadAndWrite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel8/file1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel8/file2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel8/file3.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel8/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel8/SummBytes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/SummBytes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel8/copy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/copy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel8/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,74 +1,43 @@
 package jclevel8;
 
-/*Enter a file name from the console.
-Find the byte or bytes with the maximum number of repetitions.
-Display them on the screen, separated by spaces.
-Close the IO stream.
+/*Read 2 file names from the console: file1, file2.
+Write all the bytes in file1 to file2, but in the reverse order.
+Close the streams.
 
 Requirements:
-•	The program should read a file name from the console.
-•	Use a FileInputStream to read from the file.
-•	All of the most frequently repeated bytes from the file should be displayed,
-separated by spaces.
-•	The screen output should be displayed in one line.
-•	The stream used to read the file must be closed.*/
+•	The program should read a file name twice from the console.
+•	Use FileInputStream to read
+ from a file, and use FileOutputStream to write to a file.
+•	In the second file, you need
+ to write all the bytes from the first file in the reverse order.
+•	The FileInputStream and FileOutputStream must be closed.*/
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+/*
+src/jclevel8/file1.txt
+src/jclevel8/file2.txt
+src/jclevel8/file3.txt
+* */
+
+import java.io.*;
+import java.util.Stack;
 
 public class Solution {
-    public static void main(String[] args) throws Exception {
-        BufferedReader reader =
-                new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
+        Stack<Integer> bytes = new Stack<>();
 
-        Map<Integer, Frequency> map = new HashMap<>();
-        try (FileInputStream fileInputStream =
-                     new FileInputStream(reader.readLine())) {
-            while (fileInputStream.available() > 0) {
-                int data = fileInputStream.read();
-
-                if (!map.containsKey(data)) {
-                    map.put(data, new Frequency());
-                } else {
-                    map.get(data).counter++;
-                }
+        try(BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(System.in));
+            FileInputStream file1 = new FileInputStream(reader.readLine());
+            FileOutputStream file2 = new FileOutputStream(reader.readLine())
+        ){
+            while (file1.available() > 0){
+                bytes.add(file1.read());
+            }
+            while (!bytes.isEmpty()){
+                file2.write(bytes.pop());
             }
         }
-
-        int maxFrequent = map.values().stream()
-                .map(frequency -> frequency.counter)
-                .max(Comparator.naturalOrder())
-                .orElseThrow(RuntimeException::new);
-
-        System.out.println(map);
-        System.out.println(maxFrequent);
-
-        Map<Integer, Integer> sortedmap = new HashMap<>();
-
-        for (Map.Entry<Integer, Frequency> entries : map.entrySet()){
-            sortedmap.put(entries.getKey(), entries.getValue().counter);
-        }
-
-        Stream<Map.Entry<Integer, Integer>> sorted =
-                sortedmap.entrySet().stream().sorted(Map.Entry.comparingByValue());
-
-        sorted.filter(integerIntegerEntry -> integerIntegerEntry
-                .getValue()
-                .equals(maxFrequent))
-                .map(Map.Entry::getKey)
-                .forEach(System.out::println);
     }
 }
 
-class Frequency {
-    public Integer counter = 1;
 
-    @Override
-    public String toString() {
-        return counter + "";
-    }
-}
