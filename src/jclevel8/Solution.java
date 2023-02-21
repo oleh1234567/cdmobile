@@ -43,7 +43,13 @@ src/jclevel8/file3.txt
 src/jclevel8/data.txt
 * */
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
@@ -65,23 +71,30 @@ public class Solution {
     private static void updateLine(String fileName, String id,
                                    String productName, String price,
                                    String quantity) throws IOException {
-        try(BufferedReader bufferedReader =
-                    new BufferedReader(new InputStreamReader(
-                            new FileInputStream(fileName)))){
-            String line;
-            while(!(line = bufferedReader.readLine())
-                    .substring(0, 8)
-                    .trim()
-                    .equals(id)){}
-            System.out.println(line);
+        String updatedLine =
+                String.format("%-8s%-30s%-8s%-4s", id, productName, price, quantity);
+
+        List<String> updatedLines = Files.readAllLines(Paths.get(fileName));
+
+        boolean deletion = productName.equals("") && price.equals("") && quantity.equals("");
+
+        for (int i = 0; i < updatedLines.size(); i++) {
+            if (updatedLines.get(i).substring(0, 8).trim().equals(id) && !deletion)
+                updatedLines.set(i, updatedLine);
+            else if (updatedLines.get(i).substring(0, 8).trim().equals(id) && deletion) {
+                updatedLines.remove(i++);
+            }
+        }
+
+        try (PrintWriter printWriter = new PrintWriter(fileName)) {
+            for (String line : updatedLines)
+                printWriter.println(line);
         }
     }
 
-    private static void deleteLine(String fileName, String arg) {
+    private static void deleteLine(String fileName, String id) throws IOException {
+        updateLine(fileName, id, "", "", "");
     }
-
-
-
 }
 
 
