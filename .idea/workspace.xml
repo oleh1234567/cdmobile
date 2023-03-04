@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="haha">
-      <change afterPath="$PROJECT_DIR$/Lion.avi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/AmigoOutputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Lion.avi.part1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Lion.avi.part2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Lion.avi.part3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Lion.avi.part4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/QuestionFileOutputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/ReceiptBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel8/packagio/AmigoOutputStream.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/file1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/file3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/file3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jclevel9/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel9/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676877584661</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="haha">
+      <created>1677908990537</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677908990538</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

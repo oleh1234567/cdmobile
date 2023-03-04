@@ -30,12 +30,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
-/*
-Tracking changes
-
-*/
 
 public class Solution {
     public static List<LineItem> lines = new ArrayList<>();
@@ -50,12 +46,46 @@ public class Solution {
              BufferedReader reader1 = new BufferedReader(fileReader1);
              BufferedReader reader2 = new BufferedReader(fileReader2)) {
 
-            Stream.
+            List<String> file1Lines = reader1.lines().collect(Collectors.toList());
+            List<String> file2Lines = reader2.lines().collect(Collectors.toList());
 
+            merge(file1Lines, file2Lines);
+
+            
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    private static void merge(List<String> file1Lines, List<String> file2Lines) {
+        for (int i = 0, j = 0; i < file1Lines.size() && j < file2Lines.size(); i++, j++) {
+            String current1 = file1Lines.get(i);
+            String current2 = file2Lines.get(j);
+
+            if(current1.equals(current2)){
+                lines.add(new LineItem(Type.SAME, current1));
+            } else if(i + 1 < file1Lines.size() && j + 1 < file2Lines.size()){
+                String next1 = file1Lines.get(i + 1);
+                String next2 = file2Lines.get(j + 1);
+                if (current2.equals(next1)) {
+                    lines.add(new LineItem(Type.REMOVED, current1));
+                    lines.add(new LineItem(Type.SAME, current2));
+                    i++;
+                } else if (current1.equals(next2)) {
+                    lines.add(new LineItem(Type.ADDED, current2));
+                    lines.add(new LineItem(Type.SAME, current1));
+                    j++;
+                }
+            }
+        }
+
+        if(file1Lines.size() > file2Lines.size()){
+            lines.add(new LineItem(Type.REMOVED, file1Lines.get(file1Lines.size() - 1)));
+        } else if(file2Lines.size() > file1Lines.size()){
+            lines.add(new LineItem(Type.ADDED, file2Lines.get(file2Lines.size() - 1)));
+        }
+    }
+
 
     public static enum Type {
         ADDED,        // New line added
