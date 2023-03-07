@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="haha">
+    <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="hahaвіфвіф">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel8/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel8/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel9/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel9/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel9/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel9/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../jdk8u345-b01/src.zip!/java/time/format/DateTimeFormatter.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../jdk8u345-b01/src.zip!/java/util/Date.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +73,7 @@
       <recent name="jclevel5" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.jclevel8.Solution">
+  <component name="RunManager" selected="Application.jclevel9.Solution">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jclevel7.Solution" />
       <module name="cdmobile" />
@@ -96,8 +102,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jclevel9.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jclevel9.Solution" />
+      <module name="cdmobile" />
+      <option name="PROGRAM_PARAMETERS" value="file1.txt file2.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jclevel9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.jclevel9.Solution" />
         <item itemvalue="Application.jclevel8.Solution" />
         <item itemvalue="Application.Solution" />
       </list>
@@ -210,7 +231,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676907920724</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="hahaвіфвіф">
+      <created>1677855711717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677855711717</updated>
+    </task>
+    <task id="LOCAL-00016" summary="hahaвіфвіф">
+      <created>1677855721884</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677855721884</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +277,8 @@
     <MESSAGE value="gagagagaga" />
     <MESSAGE value="commit from bubuntu" />
     <MESSAGE value="haha" />
-    <option name="LAST_COMMIT_MESSAGE" value="haha" />
+    <MESSAGE value="hahaвіфвіф" />
+    <option name="LAST_COMMIT_MESSAGE" value="hahaвіфвіф" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

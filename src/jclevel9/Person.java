@@ -3,20 +3,19 @@ package jclevel9;
 import java.util.Date;
 
 public class Person {
-    private String lastName;
-    private String firstName;
-    private String middleName;
+    private String name;
     private Date birthDate;
 
-    public Person(String lastName, String firstName, String middleName, Date birthDate) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.middleName = middleName;
+    public Person(String name, Date birthDate) {
+        this.name = name;
         this.birthDate = birthDate;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s %s %s %s", firstName, middleName, lastName, birthDate.toString());
+    public String getName() {
+        return name;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
     }
 }
