@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="hahaвіфвіф">
+      <change afterPath="$PROJECT_DIR$/Directory/Afile1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/Yfile2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner1/Bfile3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner1/Cfile4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Efile55.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Jfile444.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner4/file133.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allFilesContent.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/Asset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel9/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel9/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jclevel9/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel9/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,13 +75,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kuznetsov.aa.HITED1UA\IdeaProjects\cdmobile\Directory" />
       <recent name="C:\Users\kuznetsov.aa.HITED1UA\IdeaProjects\cdmobile" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="jclevel5" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.jclevel9.Solution">
+  <component name="RunManager" selected="Application.jclevel10.Solution">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jclevel7.Solution" />
       <module name="cdmobile" />
@@ -81,6 +90,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="jclevel7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jclevel10.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jclevel10.Solution" />
+      <module name="cdmobile" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\kuznetsov.aa.HITED1UA\IdeaProjects\cdmobile\Directory C:\Users\kuznetsov.aa.HITED1UA\IdeaProjects\cdmobile\allFilesContent.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jclevel10.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,6 +141,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.jclevel10.Solution" />
         <item itemvalue="Application.jclevel9.Solution" />
         <item itemvalue="Application.jclevel8.Solution" />
         <item itemvalue="Application.Solution" />
@@ -245,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677855721884</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="hahaвіфвіф">
+      <created>1678172308159</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678172308159</updated>
+    </task>
+    <task id="LOCAL-00018" summary="hahaвіфвіф">
+      <created>1678172336025</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678172336025</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
