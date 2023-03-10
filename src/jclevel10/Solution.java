@@ -1,101 +1,82 @@
 package jclevel10;
 
 
-/*
-1. The main method is passed two arguments as inputs.
-The first argument is path, which is the path to the directory; the second
- is resultFileAbsolutePath,
-which is the name (full path) of an existing file that will store the result.
-2. For each file in the path directory and in all of its subdirectories,
-do the following:
-For each file whose size in bytes is NOT greater than 50, do the following:
-2.1. Sort them by file name in ascending order. Don't include the path when sorting.
-2.2. Rename resultFileAbsolutePath to "allFilesContent.txt"
-(use the FileUtils.renameFile method and
-FileUtils.isExist if necessary).
-2.3. Sequentially write the contents of each file from step 2.1 to allFilesContent.txt.
-After the body of each file, write "\n".
-All files have the TXT extension.
-Use "/" as the path separator.
+/*Write a program that will read detailed information about
+ a folder and display it on the console.
+
+First of all, read the folder path from the console.
+If the entered path is not a directory, display "[full path] is not
+ a folder" and exit the program.
+Then calculate and display the following information:
+
+Total folders: [the number of folders in the directory and subdirectories]
+Total files: [the number of files in the directory and subdirectories]
+Total size: [the total number of bytes stored in the directory]
+
+Only use classes and methods from the java.nio package.
+
+Don't display the square brackets ("[]").
 
 Requirements:
-•	The file passed as the second argument to main must be renamed to
-allFilesContent.txt.
-•	You need to create a stream to write to the renamed file.
-•	The contents of every file that is 50 bytes or smaller must be written to
-the allFilesContent.txt file.
-•	The output stream to the file must be closed.
-•	Don't use static variables.
+•	The main method must read the folder path from the console.
+•	If the entered path isn't a directory, you need to display
+ "[full path] is not a folder" and exit the program.
+•	Only use classes and methods from the java.nio package.
+•	The following information must be displayed on the console:
+"Total folders: [the number of folders in the directory and subdirectories]".
+•	The following information must be displayed on the console:
+"Total files: [the number of files in the directory and subdirectories]".
+•	The following information must be displayed on the console:
+"Total size: [the total number of bytes stored in the directory]".*/
 
-*/
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Scanner;
 
 public class Solution {
+
     public static void main(String[] args) throws IOException {
-        File directory = new File(args[0]);
-        File resultFileAbsolutePath = new File(args[1]);
+        try(Scanner scanner = new Scanner(System.in)){
+            Path path = Paths.get(scanner.nextLine());
+            if(!path.toFile().isDirectory()){
+                System.out.println(path.toAbsolutePath() +
+                                " is not a folder");
+            } else {
 
-        rename(resultFileAbsolutePath);
+                MyVisitor myVisitor = new MyVisitor();
+                Files.walkFileTree(path, myVisitor);
 
-        List<File> allFiles = new ArrayList<>();
-
-        getAllFilesToList(directory, allFiles);
-
-
-        try (BufferedWriter bufferedWriter =
-                     new BufferedWriter(new FileWriter(resultFileAbsolutePath))) {
-
-            // Потрібно тут дістати назву файлу і якось назад вернутися
-            // до його повного шляху. Написати Компаратор чи щось таке????
-            // Використати PAth???
-            allFiles.stream()
-                    .filter(file -> file.length() <= 50)
-                    .map(File::getName)
-                    .sorted()
-                    .forEach(file -> write(bufferedWriter, file));
-        }
-    }
-
-    private static void write(BufferedWriter bufferedWriter, File file) {
-        try (BufferedReader bufferedReader =
-                     new BufferedReader(new FileReader(file))) {
-
-            while (bufferedReader.ready()){
-                bufferedWriter.write(bufferedReader.readLine());
+                displayInfo(myVisitor.directories, myVisitor.files, myVisitor.size);
             }
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    private static void rename(File resultFileAbsolutePath) {
-        File dest =
-                new File(resultFileAbsolutePath.getParent() +
-                        "\\allFilesContent.txt");
+    private static class MyVisitor extends SimpleFileVisitor<Path>{
+        private int directories = 0;
+        private int files = 0;
+        private  int size = 0;
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                throws IOException {
+                files++;
+                size += Files.readAllBytes(file).length;
+            return FileVisitResult.CONTINUE;
+        }
 
-        if (FileUtils.isExist(resultFileAbsolutePath)) {
-            FileUtils.renameFile(resultFileAbsolutePath, dest);
+        @Override
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+            directories++;
+            return FileVisitResult.CONTINUE;
         }
     }
 
-    private static void getAllFilesToList(File directory, List<File> allFiles) {
-
-        File[] files = Objects.requireNonNull(directory.listFiles());
-
-        Arrays.stream(files)
-                .filter(File::isFile)
-                .forEach(allFiles::add);
-
-        Arrays.stream(files)
-                .filter(File::isDirectory)
-                .forEach(dir -> getAllFilesToList(dir, allFiles));
-
+    private static void displayInfo(int dirs, int files, int size){
+        System.out.println("Total folders: " + dirs +
+                "\nTotal files: " + files +
+                "\nTotal size: " + size);
     }
 }
 

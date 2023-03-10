@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="hahaвіфвіф">
-      <change afterPath="$PROJECT_DIR$/Directory/Afile1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/Yfile2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/inner1/Bfile3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/inner1/Cfile4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Efile55.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Jfile444.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Directory/inner4/file133.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allFilesContent.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel10/Asset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel10/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel10/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Efilamigoe55.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/SearchFileVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Directory/inner1/inner3/Efile55.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allFilesContent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allFilesContent.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jclevel10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel10/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678172336025</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="hahaвіфвіф">
+      <created>1678377278330</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678377278330</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
