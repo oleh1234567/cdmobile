@@ -1,82 +1,53 @@
 package jclevel10;
 
 
-/*Write a program that will read detailed information about
- a folder and display it on the console.
+/*Implement the getProperties method, which must read the properties from the passed fileName file.
+fileName can have any extension, e.g. XML, any other extension, or none at all.
+You need to ensure the properties are read properly.
+If errors occur, a null object must be returned.
+The main method is not tested.
 
-First of all, read the folder path from the console.
-If the entered path is not a directory, display "[full path] is not
- a folder" and exit the program.
-Then calculate and display the following information:
-
-Total folders: [the number of folders in the directory and subdirectories]
-Total files: [the number of files in the directory and subdirectories]
-Total size: [the total number of bytes stored in the directory]
-
-Only use classes and methods from the java.nio package.
-
-Don't display the square brackets ("[]").
+Hint: you may need File.separator.
 
 Requirements:
-•	The main method must read the folder path from the console.
-•	If the entered path isn't a directory, you need to display
- "[full path] is not a folder" and exit the program.
-•	Only use classes and methods from the java.nio package.
-•	The following information must be displayed on the console:
-"Total folders: [the number of folders in the directory and subdirectories]".
-•	The following information must be displayed on the console:
-"Total files: [the number of files in the directory and subdirectories]".
-•	The following information must be displayed on the console:
-"Total size: [the total number of bytes stored in the directory]".*/
+•	The Solution class must have a Properties getProperties(String fileName) method.
+•	The getProperties method must correctly read the properties of an XML file.
+•	The getProperties method must correctly read the properties from a file with any other extension.
+•	The getProperties method must correctly return a null object if an error occurs while reading the properties.*/
 
 
-
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Properties;
 
 public class Solution {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        Properties properties = solution.getProperties("C:\\Users\\kuznetsov.aa.HITED1UA\\IdeaProjects\\cdmobile\\src\\jclevel10\\properties.xml");
+        properties.list(System.out);
 
-    public static void main(String[] args) throws IOException {
-        try(Scanner scanner = new Scanner(System.in)){
-            Path path = Paths.get(scanner.nextLine());
-            if(!path.toFile().isDirectory()){
-                System.out.println(path.toAbsolutePath() +
-                                " is not a folder");
-            } else {
+        properties = solution.getProperties("C:\\Users\\kuznetsov.aa.HITED1UA\\IdeaProjects\\cdmobile\\src\\jclevel10\\properties.txt");
+        properties.list(System.out);
 
-                MyVisitor myVisitor = new MyVisitor();
-                Files.walkFileTree(path, myVisitor);
-
-                displayInfo(myVisitor.directories, myVisitor.files, myVisitor.size);
-            }
-        }
+        properties = solution.getProperties("C:\\Users\\kuznetsov.aa.HITED1UA\\IdeaProjects\\cdmobile\\src\\jclevel10\\NotExists");
+        properties.list(System.out);
     }
 
-    private static class MyVisitor extends SimpleFileVisitor<Path>{
-        private int directories = 0;
-        private int files = 0;
-        private  int size = 0;
-        @Override
-        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
-                throws IOException {
-                files++;
-                size += Files.readAllBytes(file).length;
-            return FileVisitResult.CONTINUE;
-        }
+    public Properties getProperties(String fileName) {
+        Properties properties = new Properties();
+        try {
 
-        @Override
-        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-            directories++;
-            return FileVisitResult.CONTINUE;
-        }
-    }
+            if (fileName.endsWith(".xml"))
+                properties.loadFromXML(Files.newInputStream(Paths.get(fileName)));
+            else
+                properties.load(new FileReader(fileName));
 
-    private static void displayInfo(int dirs, int files, int size){
-        System.out.println("Total folders: " + dirs +
-                "\nTotal files: " + files +
-                "\nTotal size: " + size);
+        } catch (IOException e) {
+            return properties;
+        }
+        return properties;
     }
 }
 

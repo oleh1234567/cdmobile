@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324bdf19-c9a4-4efc-b1ef-b02c3dd121da" name="Changes" comment="hahaвіфвіф">
-      <change afterPath="$PROJECT_DIR$/Directory/inner1/inner3/Efilamigoe55.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jclevel10/SearchFileVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/ConcreteFileData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/FileData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/NullFileData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/properties.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jclevel10/properties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_17_01_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_17_01__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Directory/inner1/inner3/Efile55.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allFilesContent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allFilesContent.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jclevel10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jclevel10/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -283,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678377278330</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="hahaвіфвіф">
+      <created>1678462260618</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678462260618</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
